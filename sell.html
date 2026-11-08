@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo form for listing a second-hand smartphone on RePhone.">
+  <title>Sell Your Phone | RePhone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER + NAVIGATION: identical on all 3 pages -->
+<header class="site-header">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="logo" href="index.html"><img src="images/logo.png" alt="RePhone logo">RePhone</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="phones.html">Explore Phones</a></li>
+      <li><a class="active" href="sell.html">Sell Your Phone</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="page-title">
+  <div class="container">
+    <h1>Sell Your Phone</h1>
+    <p>Tell us about your phone, then click Submit listing.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <p id="demo-message" class="notice success"><strong>Listing submitted.</strong> This is a demo, so nothing was saved or published.</p>
+
+    <form class="form" action="sell.html#demo-message" method="get">
+      <div class="form-grid">
+        <div class="field full">
+          <label for="seller">Seller name</label>
+          <input type="text" id="seller" name="seller" placeholder="Your full name" required>
+        </div>
+        <div class="field">
+          <label for="brand">Phone brand</label>
+          <select id="brand" name="brand" required>
+            <option value="" disabled selected>Choose a brand</option>
+            <option>Apple</option><option>Samsung</option><option>OnePlus</option>
+            <option>Xiaomi / Redmi</option><option>Realme</option><option>Google</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="model">Phone model</label>
+          <input type="text" id="model" name="model" placeholder="e.g. Galaxy S21" required>
+        </div>
+        <div class="field">
+          <label for="storage">Storage capacity</label>
+          <select id="storage" name="storage" required>
+            <option value="" disabled selected>Choose storage</option>
+            <option>32 GB</option><option>64 GB</option><option>128 GB</option><option>256 GB</option><option>512 GB or more</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="condition">Phone condition</label>
+          <select id="condition" name="condition" required>
+            <option value="" disabled selected>Choose condition</option>
+            <option>Excellent</option><option>Good</option><option>Fair</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="price">Expected selling price (₹)</label>
+          <input type="number" id="price" name="price" min="0" step="100" placeholder="e.g. 15000" required>
+        </div>
+        <div class="field">
+          <label for="battery">Battery health (%)</label>
+          <input type="number" id="battery" name="battery" min="1" max="100" placeholder="e.g. 85" required>
+        </div>
+        <div class="field full">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" placeholder="Accessories, warranty, scratches and anything else a buyer should know"></textarea>
+        </div>
+        <div class="field full">
+          <label for="contact">Contact number</label>
+          <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" title="Enter a 10-digit mobile number" placeholder="10-digit mobile number" required>
+        </div>
+        <div class="full">
+          <button class="btn" type="submit">Submit listing</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER: identical on all 3 pages -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>RePhone</h3>
+      <p>Second-hand smartphones with the facts up front.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="phones.html">Explore Phones</a></li>
+        <li><a href="sell.html">Sell Your Phone</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="copyright container">&copy; 2026 RePhone. Frontend demo built with HTML5 and CSS3 only.</p>
+</footer>
+
+</body>
+</html>

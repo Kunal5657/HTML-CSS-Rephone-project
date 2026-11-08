@@ -1,0 +1,119 @@
+/* =========================================================
+   RePhone - one stylesheet shared by index.html, phones.html and sell.html
+   Edit the colours in the :root block below to re-theme the whole site.
+   ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;700&display=swap");
+
+/* 1. VARIABLES AND BASE STYLES */
+:root{
+  --ink:#0f1633; --muted:#4b5575; --cobalt:#2540d8; --cobalt-dark:#1b32b0;
+  --sticker:#ffd23f; --paper:#f4f6fb; --white:#fff; --line:#d5dbee;
+}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+html{scroll-padding-top:84px}
+body{margin:0;font-family:"Instrument Sans","Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+h1,h2,h3{font-family:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;line-height:1.15;letter-spacing:-.015em;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800}
+h3{font-size:1.25rem;font-weight:600}
+p{max-width:62ch}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--cobalt)}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+section{padding:72px 0}
+.container{width:min(1100px,90%);margin-inline:auto}
+.section-head{max-width:40rem;margin-bottom:36px}
+.white{background:var(--white);border-block:1px solid var(--line)}
+.more{margin-top:32px}
+.full{grid-column:1/-1}
+
+/* 2. HEADER AND NAVIGATION */
+.site-header{position:sticky;top:0;z-index:10;background:var(--white);border-bottom:1px solid var(--line)}
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 28px;padding-top:10px}
+.logo{display:flex;align-items:center;gap:10px;padding-bottom:10px;font:800 1.5rem "Bricolage Grotesque","Trebuchet MS",sans-serif;color:var(--ink);text-decoration:none}
+.logo img{width:36px;height:36px}
+.nav ul{display:flex;flex-wrap:wrap;gap:0 22px;list-style:none;margin:0;padding:0}
+.nav ul a{display:block;padding:10px 0;border-bottom:3px solid transparent;color:var(--ink);font-weight:500;text-decoration:none}
+.nav ul a:hover,.nav ul a.active{border-bottom-color:var(--cobalt)}
+
+/* 3. BUTTONS */
+.btn{display:inline-block;padding:11px 22px;border:2px solid var(--cobalt);border-radius:8px;background:var(--cobalt);color:#fff;font:700 1rem "Instrument Sans",sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--cobalt-dark);border-color:var(--cobalt-dark)}
+.btn-outline{background:transparent;color:var(--cobalt)}
+.btn-outline:hover{background:var(--cobalt);color:#fff}
+
+/* 4. HOME PAGE: HERO */
+.hero{padding:56px 0 72px}
+.hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero p{font-size:1.15rem;color:var(--muted)}
+.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-art{position:relative}
+.hero-art img{border-radius:10px}
+.sticker{position:absolute;left:-12px;bottom:28px;width:124px;height:124px;display:grid;place-content:center;text-align:center;line-height:1.2;border:2px dashed var(--ink);border-radius:50%;background:var(--sticker);color:var(--ink);transform:rotate(-8deg)}
+.sticker span{font-size:.85rem}
+.sticker strong{font:800 1.6rem "Bricolage Grotesque",sans-serif}
+
+/* 5. PHONE CARDS (used on index.html and phones.html) */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.photo{position:relative}
+.photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.price{position:absolute;left:0;bottom:14px;margin:0;padding:6px 16px 6px 26px;background:var(--sticker);color:var(--ink);font:800 1.3rem "Bricolage Grotesque",sans-serif;clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%)}
+.card-body{padding:16px 18px 18px}
+.brand{margin:0;color:var(--muted);font-size:.95rem}
+.specs{list-style:none;margin:12px 0 16px;padding:0}
+.specs li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.specs span{color:var(--muted)}
+.specs strong{display:flex;align-items:center;gap:8px}
+meter{width:72px;height:12px}
+.grade{padding:2px 10px;border-radius:99px;font-size:.9rem}
+.excellent{background:#d9f3e4;color:#0b6b3f}
+.good{background:#e1e7ff;color:#1d34b8}
+.fair{background:#ffe4d0;color:#8a3b00}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.actions .btn{padding:8px 16px;font-size:.95rem}
+
+/* 6. HOME PAGE: OTHER SECTIONS */
+.grid.small{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.feature{padding-top:16px;border-top:1px solid var(--line)}
+.feature p{margin:0;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin:0;padding:0;list-style:none;counter-reset:step}
+.steps li{counter-increment:step}
+.steps li::before{content:counter(step);display:block;margin-bottom:8px;color:var(--cobalt);font:800 3rem/1 "Bricolage Grotesque",sans-serif}
+.steps p{margin:0;color:var(--muted)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.checks,.contact-list{margin:0;padding:0;list-style:none}
+.checks li,.contact-list li{padding:10px 0;border-top:1px solid var(--line)}
+.checks li:last-child,.contact-list li:last-child{border-bottom:1px solid var(--line)}
+.contact-list li{display:flex;gap:16px}
+.contact-list span{width:72px;color:var(--muted)}
+
+/* 7. PAGE TITLES, NOTICES AND THE SELL FORM */
+.page-title{padding:56px 0 40px}
+.page-title p{margin:0;color:var(--muted);font-size:1.1rem}
+.notice{max-width:760px;margin:0 0 28px;padding:14px 18px;border:1px solid var(--line);border-left:6px solid var(--sticker);border-radius:6px;background:var(--white)}
+.success{display:none;border-left-color:#0b6b3f}
+.success:target{display:block}
+.form{max-width:760px;padding:28px;border:1px solid var(--line);border-radius:10px;background:var(--white)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+label{font-weight:700}
+input,select,textarea{padding:10px 12px;border:1.5px solid #aab3d1;border-radius:8px;background:#fff;color:var(--ink);font:inherit}
+textarea{min-height:110px;resize:vertical}
+
+/* 8. FOOTER */
+.site-footer{padding:56px 0 24px;background:var(--ink);color:#c9d0ea}
+.site-footer :focus-visible{outline-color:var(--sticker)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+.site-footer h3{color:#fff;font-size:1.05rem}
+.site-footer a{color:#fff}
+.site-footer ul{margin:0;padding:0;list-style:none}
+.site-footer li{padding:3px 0}
+.copyright{max-width:none;margin:32px auto 0;padding-top:16px;border-top:1px solid #34406b;font-size:.9rem}
+
+/* 9. SMALL SCREENS */
+@media (max-width:800px){
+  section{padding:48px 0}
+  .hero .container,.two-col,.footer-grid,.form-grid{grid-template-columns:1fr}
+}
